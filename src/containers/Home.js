@@ -22,6 +22,14 @@ const mapDispatchToProps = dispatch => {
   }
 }
 
+const mapStateToProps = (state) => {
+  debugger
+  return {
+    songs: state.songsReducer.songs,
+    loading: state.songsReducer.loading
+  }
+}
 
 
-export default connect(null, { fetchSongs })(Home)
+
+export default connect(mapStateToProps, { fetchSongs })(Home)
