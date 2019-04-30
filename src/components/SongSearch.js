@@ -11,8 +11,10 @@ class SongSearch extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    debugger
-    console.log(this.state)
+    this.props.searchSongs(this.state)
+    this.setState({
+      songTitle: ""
+    })
   }
 
   handleChange = (e) => {
