@@ -2,16 +2,25 @@ import React from 'react'
 import SongSearch from '../components/SongSearch'
 import { connect } from 'react-redux'
 import { fetchSongs } from '../actions/songActions'
+import  Songs  from './Songs'
 class Home extends React.Component {
 
   searchSongs = (state) => {
     this.props.fetchSongs(state)
   }
 
+  renderSongs = () => {
+    if (this.props.songs.length > 0) {
+      debugger
+      return <Songs songs={this.props.songs}/>
+    }
+  }
+
   render() {
     return (
       <div className="Home">
         <SongSearch searchSongs={this.searchSongs}/>
+        {this.renderSongs()}
       </div>
     )
   }
