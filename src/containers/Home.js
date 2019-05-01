@@ -3,6 +3,7 @@ import SongSearch from '../components/SongSearch'
 import { connect } from 'react-redux'
 import { fetchSongs } from '../actions/songActions'
 import  Songs  from './Songs'
+import { Redirect } from 'react-router-dom'
 class Home extends React.Component {
 
   searchSongs = (state) => {
@@ -11,8 +12,12 @@ class Home extends React.Component {
 
   renderSongs = () => {
     if (this.props.songs.length > 0) {
-      debugger
-      return <Songs songs={this.props.songs}/>
+      return  <Redirect to={{
+        pathname: '/songs',
+        state: { songs: this.props.songs }
+      }} />
+      // window.history.pushState(this.props.songs, "songs", "/songs")
+      // return <Songs songs={this.props.songs}/>
     }
   }
 
