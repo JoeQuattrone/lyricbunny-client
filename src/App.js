@@ -11,7 +11,6 @@ function App() {
       <div className="App">
         <Route exact path="/" component={Home}/>
         <Route exact path="/songs" component={Songs}/>
-        <Route exact path="/songs/:id" component={ShowSong} />
       </div>
     </Router>
   );

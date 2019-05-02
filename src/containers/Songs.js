@@ -1,6 +1,7 @@
 import React from 'react'
 import Song from '../components/Song'
-import { Link } from 'react-router-dom';
+import ShowSong from './ShowSong'
+import { Link, Route } from 'react-router-dom';
 
 class Songs extends React.Component {
   constructor(props) {
@@ -40,7 +41,11 @@ class Songs extends React.Component {
   //   )
   // }
 
+  // <Route path={`${match.url}/:movieId`} render={routerProps => <MovieShow movies={movies} {...routerProps} /> }/>
+  // </div>
+
   listSongs = () => {
+    console.log(this.state)
     return(
       this.state.songs.map(song => <li><Link key={song.track.track_id} to={`/songs/${song.track.track_id}`}>{song.track.track_name}</Link></li>)
     )
@@ -52,6 +57,7 @@ class Songs extends React.Component {
         <h4>Showing results for "{`${this.state.songTitle}`}" </h4>
         <h1>Songs</h1>
         <div>{this.listSongs()}</div>
+        // <Route exact path="/songs/:id" render={routerProps => <ShowSong songs={this.state.songs}/>} />
       </div>
     )
   }
