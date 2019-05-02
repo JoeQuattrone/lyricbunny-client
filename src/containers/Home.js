@@ -5,19 +5,29 @@ import { fetchSongs } from '../actions/songActions'
 import  Songs  from './Songs'
 import { Redirect } from 'react-router-dom'
 class Home extends React.Component {
+  constructor(props) {
+    super(props)
 
-  searchSongs = (state) => {
-    this.props.fetchSongs(state)
+    this.state = {
+      songTitle: ""
+    }
   }
 
+// fetch songs and save song title to state
+  searchSongs = (state) => {
+    this.props.fetchSongs(state)
+    this.setState({
+      ...state,
+      songTitle: state.songTitle
+    })
+  }
+// route to /songs if songs in state
   renderSongs = () => {
     if (this.props.songs.length > 0) {
       return  <Redirect to={{
         pathname: '/songs',
-        state: { songs: this.props.songs }
+        state: { songs: this.props.songs, songTitle: this.state.songTitle }
       }} />
-      // window.history.pushState(this.props.songs, "songs", "/songs")
-      // return <Songs songs={this.props.songs}/>
     }
   }
 
@@ -30,6 +40,7 @@ class Home extends React.Component {
     )
   }
 }
+
 const mapDispatchToProps = dispatch => {
   return {
     add_Song: song => dispatch({type: "ADD_SONG", payload: song})
@@ -38,6 +49,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = (state) => {
   return {
+    ...state,
     songs: state.songsReducer.songs,
     loading: state.songsReducer.loading
   }
