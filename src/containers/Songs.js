@@ -32,7 +32,7 @@ class Songs extends React.Component {
   render() {
     return (
       <div>
-        <h4>Showing results for {this.state.songTitle} </h4>
+        <h4>Showing results for "{`${this.state.songTitle}`}" </h4>
         <h1>Songs</h1>
         <div>{this.listSongs()}</div>
       </div>
