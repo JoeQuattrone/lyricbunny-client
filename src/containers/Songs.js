@@ -22,10 +22,27 @@ class Songs extends React.Component {
     }
   }
 
+  // listSongs = () => {
+  //   console.log(this.state)
+  //   return (
+  //     this.state.songs.map((song, i) => <Song key={i} song={song.track}/>)
+  //   )
+  // }
+
+  // const MoviesList = ({ movies }) => {
+  // const renderMovies = Object.keys(movies).map(movieID =>
+  //   <Link key={movieID} to={`/movies/${movieID}`}>{movies[movieID].title}</Link>
+  // );
+
+  //  listSongs = () => {
+  //   return(
+  //     Object.keys(this.state.songs).map(songId => <Link key={songId} to={`/songs/${songId}`}>{this.state.songs[songId].track.track_name}</Link>)
+  //   )
+  // }
+
   listSongs = () => {
-    console.log(this.state)
-    return (
-      this.state.songs.map((song, i) => <Song key={i} song={song.track}/>)
+    return(
+      this.state.songs.map(song => <li><Link key={song.track.track_id} to={`/songs/${song.track.track_id}`}>{song.track.track_name}</Link></li>)
     )
   }
 
