@@ -11,7 +11,7 @@ import ErrorPage from './containers/ErrorPage'
 class App extends React.Component {
   componentDidMount() {
     if (localStorage.getItem("songTitle")) {
-      this.props.fetchSongs({songTitle: localStorage.getItem("songTitle")})
+      this.props.fetchSongs({songTitle: localStorage.getItem("songTitle")}, false)
     }
   }
 

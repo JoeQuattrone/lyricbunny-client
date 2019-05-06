@@ -5,15 +5,10 @@ import {fetchLyrics} from '../actions/songActions'
 class ShowSong extends React.Component {
 
   componentDidMount() {
+    fetchLyrics(this.props.match.params.songId)
   }
 
-  fetchSongs = () => fetchLyrics(this.props.songs[this.props.match.params.songId])
-
-
   render() {
-    const songId  = this.props.match.params.songId
-    const song = this.props.songs[this.songId]
-
     return (
       <div className="container">
         <h1>{console.log(this.props.songs)} ShowSong</h1>
@@ -31,4 +26,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(ShowSong)
+export default connect(mapStateToProps, { fetchLyrics })(ShowSong)

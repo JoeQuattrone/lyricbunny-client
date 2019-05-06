@@ -17,6 +17,7 @@ export default function songsReducer(state = {
     return {...state, loading: true}
 
     case 'ADD_LYRICS':
+    debugger
     return {loading: false, lyrics: action.payload}
 
     default:
