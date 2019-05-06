@@ -2,7 +2,6 @@ import React from 'react'
 import SongSearch from '../components/SongSearch'
 import { connect } from 'react-redux'
 import { fetchSongs } from '../actions/songActions'
-import  Songs  from './Songs'
 import { Redirect } from 'react-router-dom'
 class Home extends React.Component {
   constructor(props) {

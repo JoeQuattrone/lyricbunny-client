@@ -45,22 +45,24 @@ class Songs extends React.Component {
   // </div>
 
   listSongs = () => {
-    console.log(this.state)
     return(
-      this.state.songs.map(song => <li><Link key={song.track.track_id} to={`/songs/${song.track.track_id}`}>{song.track.track_name}</Link></li>)
+      this.state.songs.map((song, id) => <li key={id}><Link to={`${this.props.match.url}/${id}`}>{song.track.track_name}</Link></li>)
     )
   }
 
   render() {
     return (
       <div>
+      {console.log(this.props)}
         <h4>Showing results for "{`${this.state.songTitle}`}" </h4>
         <h1>Songs</h1>
         <div>{this.listSongs()}</div>
-        // <Route exact path="/songs/:id" render={routerProps => <ShowSong songs={this.state.songs}/>} />
+        <Route path={`${this.props.match.path}/:songId`} component={ShowSong} />
+
       </div>
     )
   }
 }
 
 export default Songs
+//         <Route path={`/songs/:songId`} render={routerProps => <ShowSong songs={this.state.songs}/>} />
