@@ -13,6 +13,12 @@ export default function songsReducer(state = {
     case 'ADD_SONG':
     return {loading: false, songs: action.payload}
 
+    case 'LOADING_LYRICS':
+    return {...state, loading: true}
+
+    case 'ADD_LYRICS':
+    return {loading: false, lyrics: action.payload}
+
     default:
     return state
   }

@@ -15,6 +15,7 @@ class Home extends React.Component {
 // fetch songs and save song title to state
   searchSongs = (state) => {
     this.props.fetchSongs(state)
+    localStorage.setItem("songTitle", state.songTitle)
     this.setState({
       ...state,
       songTitle: state.songTitle
@@ -32,23 +33,18 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="Home">
-        <SongSearch searchSongs={this.searchSongs}/>
-        {this.renderSongs()}
+      <div className="container">
+        <div className="Home">
+          <SongSearch searchSongs={this.searchSongs}/>
+          {this.renderSongs()}
+        </div>
       </div>
     )
   }
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    add_Song: song => dispatch({type: "ADD_SONG", payload: song})
-  }
-}
-
 const mapStateToProps = (state) => {
   return {
-    ...state,
     songs: state.songsReducer.songs,
     loading: state.songsReducer.loading
   }

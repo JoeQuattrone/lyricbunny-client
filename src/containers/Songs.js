@@ -1,7 +1,7 @@
 import React from 'react'
 import Song from '../components/Song'
 import ShowSong from './ShowSong'
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 
 class Songs extends React.Component {
   constructor(props) {
@@ -23,26 +23,11 @@ class Songs extends React.Component {
     }
   }
 
-  // listSongs = () => {
-  //   console.log(this.state)
-  //   return (
-  //     this.state.songs.map((song, i) => <Song key={i} song={song.track}/>)
-  //   )
+  // redirectToSong = (e,song) => {
+  //   debugger
   // }
 
-  // const MoviesList = ({ movies }) => {
-  // const renderMovies = Object.keys(movies).map(movieID =>
-  //   <Link key={movieID} to={`/movies/${movieID}`}>{movies[movieID].title}</Link>
-  // );
-
-  //  listSongs = () => {
-  //   return(
-  //     Object.keys(this.state.songs).map(songId => <Link key={songId} to={`/songs/${songId}`}>{this.state.songs[songId].track.track_name}</Link>)
-  //   )
-  // }
-
-  // <Route path={`${match.url}/:movieId`} render={routerProps => <MovieShow movies={movies} {...routerProps} /> }/>
-  // </div>
+   // onClick={ e => this.redirectToSong(e, song)}
 
   listSongs = () => {
     return(
@@ -52,17 +37,13 @@ class Songs extends React.Component {
 
   render() {
     return (
-      <div>
-      {console.log(this.props)}
+      <div className="container">
         <h4>Showing results for "{`${this.state.songTitle}`}" </h4>
         <h1>Songs</h1>
         <div>{this.listSongs()}</div>
-        <Route path={`${this.props.match.path}/:songId`} component={ShowSong} />
-
       </div>
     )
   }
 }
 
 export default Songs
-//         <Route path={`/songs/:songId`} render={routerProps => <ShowSong songs={this.state.songs}/>} />
