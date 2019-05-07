@@ -24,6 +24,18 @@ class ShowSong extends React.Component {
       this.setState({
         liked: true
       })
+
+      let data = {
+        song: this.findSong()
+      }
+      fetch('http://localhost:3001/update_likes', {
+        method: "POST",
+        mode: 'cors',
+        headers: {
+           "Content-Type": "application/json",
+       },
+       body: JSON.stringify(data)
+      })
     }
   }
 
