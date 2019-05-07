@@ -2,7 +2,7 @@ import React from 'react'
 import SongSearch from '../components/SongSearch'
 import { connect } from 'react-redux'
 import { fetchSongs } from '../actions/songActions'
-import { Redirect } from 'react-router-dom'
+import TrendingSongs from '../components/TrendingSongs'
 
 class Home extends React.Component {
   constructor(props) {
@@ -29,6 +29,7 @@ class Home extends React.Component {
       <div className="container">
         <div className="Home">
           <SongSearch searchSongs={this.searchSongs}/>
+          <TrendingSongs />
         </div>
       </div>
     )

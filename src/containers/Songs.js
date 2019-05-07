@@ -1,7 +1,5 @@
 import React from 'react'
-import Song from '../components/Song'
-import ShowSong from './ShowSong'
-import { Link, Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 
 class Songs extends React.Component {
