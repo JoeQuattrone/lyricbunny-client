@@ -10,7 +10,7 @@ import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 class ShowSong extends React.Component {
 
   componentDidMount() {
-    fetchLyrics(this.props.match.params.songId)
+    this.props.fetchLyrics(this.props.match.params.songId)
   }
 
   render() {

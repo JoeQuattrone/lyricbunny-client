@@ -10,6 +10,7 @@ export function fetchSongs(state, history) {
       .then(res => res.data.message.body.track_list)
       .then(trackList => {
           if (history) {
+            dispatch({ type: 'ADD_SONG', payload: trackList })
             history.push("/songs")
           } else {
             return  dispatch({ type: 'ADD_SONG', payload: trackList })
@@ -21,6 +22,8 @@ export function fetchSongs(state, history) {
 export function fetchLyrics(trackId) {
   const url = BASE_URL + `track.lyrics.get?track_id=${trackId}&apikey=523ebe747e1a258aaddd09f97f90cb70`
     return (dispatch) => {
+      debugger
+
       dispatch({ type: 'LOADING_LYRICS' })
       return fetch(url)
         .then(res => console.log(res.json()))
