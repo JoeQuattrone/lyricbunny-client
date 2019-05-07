@@ -2,12 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchLyrics } from '../actions/songActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 
-library.add(fas)
 
 class ShowSong extends React.Component {
 
@@ -18,10 +16,16 @@ class ShowSong extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1> ShowSong</h1>
-        <h2>djodjodj</h2>
-        <FontAwesomeIcon icon={farFaHeart}size="lg" />
-
+        <h5>Lyrics</h5>
+          <h1 className=" col s10 song-header"> Song Name</h1>
+          <div className="float-right">
+            <FontAwesomeIcon icon={farFaHeart}size="lg"  />
+          </div>
+        <h4>Artist Name</h4>
+        <hr/>
+        <div className="InnerContainer">
+          <p>Lyrics</p>
+        </div>
       </div>
     )
   }

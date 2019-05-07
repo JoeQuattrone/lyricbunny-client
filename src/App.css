@@ -1,0 +1,13 @@
+.float-right {
+  float: right
+}
+
+.song-header {
+
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
