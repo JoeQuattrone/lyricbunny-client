@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import {fetchLyrics} from '../actions/songActions'
+import { fetchLyrics } from '../actions/songActions'
 
 class ShowSong extends React.Component {
 
@@ -11,7 +11,7 @@ class ShowSong extends React.Component {
   render() {
     return (
       <div className="container">
-        <h1>{console.log(this.props.songs)} ShowSong</h1>
+        <h1> ShowSong</h1>
         <h2>djodjodj</h2>
       </div>
     )

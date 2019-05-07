@@ -1,4 +1,4 @@
-import { fetchSongs } from '../actions/songActions'
+import { fetchSongs, fetchLyrics } from '../actions/songActions'
 import cuid from 'cuid';
 export const cuidFn = cuid;
 
@@ -14,10 +14,11 @@ export default function songsReducer(state = {
     return {loading: false, songs: action.payload}
 
     case 'LOADING_LYRICS':
+    debugger
+
     return {...state, loading: true}
 
     case 'ADD_LYRICS':
-    debugger
     return {loading: false, lyrics: action.payload}
 
     default:

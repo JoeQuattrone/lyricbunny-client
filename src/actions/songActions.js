@@ -21,9 +21,11 @@ export function fetchSongs(state, history) {
 export function fetchLyrics(trackId) {
   const url = BASE_URL + `track.lyrics.get?track_id=${trackId}&apikey=523ebe747e1a258aaddd09f97f90cb70`
   return (dispatch) => {
+    debugger
+
     dispatch({ type: 'LOADING_LYRICS' })
-    return axios.get(url)
-      .then(res => console.log(res))
+    return fetch(url)
+      .then(res => console.log(res.json()))
       .then(data => dispatch({ type: 'ADD_LYRICS', payload: data }))
   }
 }

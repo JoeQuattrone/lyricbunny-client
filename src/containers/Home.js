@@ -15,8 +15,8 @@ class Home extends React.Component {
 
 // fetch songs and save song title to state
   searchSongs = (state) => {
-    this.props.fetchSongs(state, this.props.history)
     localStorage.setItem("songTitle", state.songTitle)
+    this.props.fetchSongs(state, this.props.history)
     this.setState({
       ...state,
       songTitle: state.songTitle
