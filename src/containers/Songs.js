@@ -14,9 +14,8 @@ class Songs extends React.Component {
     }
   }
 
-// set local state to state from props
   componentDidMount(prevProps) {
-
+  
   }
 
   listSongs = () => {
