@@ -6,6 +6,13 @@
 
 }
 
+.row .col.heart-div {
+  height: 100px;
+  padding: 0px;
+  padding-top: 80px;
+}
+
+
 .clearfix::after {
   content: "";
   clear: both;
