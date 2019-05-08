@@ -28,7 +28,7 @@ class Home extends React.Component {
     return (
         <div className="Home">
           <SongSearch searchSongs={this.searchSongs}/>
-          <div className="white-background clearfix">
+          <div className="white-background">
             <TrendingSongs />
           </div>
         </div>

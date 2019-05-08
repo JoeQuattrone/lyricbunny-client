@@ -63,15 +63,6 @@ Home
   margin-bottom: 1.9rem;
 }
 
-@media all and (max-width: 520px) {
-  #home-searchbar {
-    width: 100%;
-  }
-
-  #home-search-btn {
-    width: 100%;
-  }
-}
 
 .white-row {
   background: white;
@@ -105,3 +96,26 @@ ShowSong
   clear: both;
   display: table;
 }
+
+/*
+
+
+Media Queries
+
+
+ */
+
+
+ @media all and (max-width: 520px) {
+   #home-searchbar {
+     width: 100%;
+   }
+
+   #home-search-btn {
+     width: 100%;
+   }
+
+   .white-background {
+     top: 400px;
+   }
+ }
