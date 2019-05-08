@@ -1,9 +1,88 @@
-.float-right {
-  float: right
+/*
+
+
+Global Styles
+
+
+
+ */
+
+body {
+  background-color: #f5f7fa;
 }
 
-.song-header {
+h1, h2, h3, h4, h5, h6 {
+  color: #2c3e50;
+}
 
+h2, h3 {
+  font-weight: 700;
+}
+
+/*
+
+
+Home
+
+
+ */
+
+.white-background {
+  background-color: white;
+  position: absolute;
+  top: 300px;
+  bottom: 0;
+  width: 100%;
+}
+
+#home-searchbar {
+  border: solid 1px #fff;
+  background: #fff;
+  width: 80%;
+  z-index: 1;
+  box-shadow: 2px 2px 5px #888;
+}
+
+#home-search-btn {
+  height: 100%;
+  padding: 14px;
+  color: white;
+  background: #fb8c00;
+  border: solid 1px #fb8c00;
+  border-radius: 2px;
+  z-index: 1;
+  box-shadow: 2px 2px 5px #888;
+
+}
+
+#home-title {
+  margin-bottom: 1.9rem;
+}
+
+@media all and (max-width: 520px) {
+  #home-searchbar {
+    width: 100%;
+  }
+
+  #home-search-btn {
+    width: 100%;
+  }
+}
+
+
+
+
+
+/*
+
+
+ShowSong
+
+
+ */
+
+.float-right {
+  float: right
 }
 
 .row .col.heart-div {

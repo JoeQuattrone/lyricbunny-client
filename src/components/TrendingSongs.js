@@ -19,8 +19,8 @@ class TrendingSongs extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Trending Songs</h2>
+      <div className="container">
+        <h2 className="center">Trending Songs</h2>
         <div className="row">{this.renderTrendingSongs()}</div>
       </div>
     )

@@ -25,10 +25,15 @@ class SongSearch extends React.Component {
 
   render() {
     return (
-      <div className="SongSearch">
+      <div className="container">
+        <h3 id="home-title">Explore Our Enormous Database of Song Lyrics</h3>
         <form onSubmit={(e) => this.handleSubmit(e)}>
-          <input type="text" name="songTitle" onChange={(e) => this.handleChange(e)} placeholder="Type song title" value={this.state.songTitle}/>
-          <input type="submit" value="SEARCH" />
+          <div className="row">
+            <div className="col s12">
+              <input id="home-searchbar" type="text" name="songTitle" onChange={(e) => this.handleChange(e)} placeholder="Type song title" value={this.state.songTitle}/>
+              <input id="home-search-btn" type="submit" value="SEARCH" />
+            </div>
+          </div>
         </form>
       </div>
     )

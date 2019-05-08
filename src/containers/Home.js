@@ -26,12 +26,12 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="container">
         <div className="Home">
           <SongSearch searchSongs={this.searchSongs}/>
-          <TrendingSongs />
+          <div className="white-background">
+            <TrendingSongs />
+          </div>
         </div>
-      </div>
     )
   }
 }
