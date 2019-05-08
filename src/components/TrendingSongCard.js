@@ -56,13 +56,16 @@ class TrendingSongCard extends React.Component {
               <p>{this.props.song.genre}</p>
               <p>{this.state.likes} likes</p>
             </div>
-
-            <div className="card-action">
-              <a href="#">LIKE THIS SONG</a>
-              {this.state.liked ? <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon white-text right"  /></span> :
-              <span onClick={e => this.likeSong(e)}><FontAwesomeIcon id={this.props.song.id} icon={farFaHeart}size="lg" className="heart-icon white-text right"  /></span>}
-            </div>
           </Link>
+          <div className="card-action">
+            <Link
+              to={{
+                pathname: 'songs/'+ this.props.song.track_id,
+                state: { song: this.props.song}
+              }} >LIKE THIS SONG</Link>
+            {this.state.liked ? <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon white-text right"  /></span> :
+            <span onClick={e => this.likeSong(e)}><FontAwesomeIcon id={this.props.song.id} icon={farFaHeart}size="lg" className="heart-icon white-text right"  /></span>}
+          </div>
         </div>
       </div>
     )
