@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 import { fetchSongs } from './actions/songActions'
 import ErrorPage from './containers/ErrorPage'
 
+
 class App extends React.Component {
   componentDidMount() {
     if (localStorage.getItem("songTitle")) {
