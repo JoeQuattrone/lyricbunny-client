@@ -9,7 +9,6 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 
 class ShowSong extends React.Component {
-
   state = {
     liked: false,
   }
@@ -42,6 +41,8 @@ class ShowSong extends React.Component {
 
 findSong = () => this.props.songs.find(song => song.track.track_id === parseInt(this.props.match.params.songId))
 
+findSongFromLocation = () => this.props.location.state ? {track: this.props.location.state.song} : null
+
 chooseSong = (songFromProps, songFromLocaton) => {
   if (songFromProps) {
     return songFromProps
@@ -54,7 +55,7 @@ chooseSong = (songFromProps, songFromLocaton) => {
 
   render() {
     let songFromProps = this.findSong()
-    let songFromLocation = {track: this.props.location.state.song}
+    let songFromLocation = this.findSongFromLocation()
     let song = this.chooseSong(songFromProps, songFromLocation)
     let lyrics = this.props.lyrics
 

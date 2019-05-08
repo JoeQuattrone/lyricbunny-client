@@ -27,7 +27,7 @@ class Songs extends React.Component {
   render() {
     return (
       <div className="container">
-        <h4>Search results for <span className="bold"> "{`${localStorage.getItem("songTitle")}`}"</span></h4>
+        <h4>Search results for <span className="bold"> {localStorage.getItem("songTitle")}</span></h4>
         <div>{this.listSongs()}</div>
       </div>
     )

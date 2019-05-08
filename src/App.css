@@ -110,7 +110,7 @@ Media Queries
  */
 
 
- @media all and (max-width: 520px) {
+ @media all and (max-width: 550px) {
    #home-searchbar {
      width: 100%;
    }
