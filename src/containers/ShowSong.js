@@ -78,8 +78,6 @@ chooseSong = (songFromProps, songFromLocaton) => {
   }
 }
 
-
-
 const mapStateToProps = (state) => {
   return {
     songs: state.songsReducer.songs,
