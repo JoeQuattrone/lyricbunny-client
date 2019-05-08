@@ -14,7 +14,7 @@ class TrendingSongs extends React.Component {
   }
 
   renderTrendingSongs = () => {
-    return this.state.trendingSongs.map((song, id) => <TrendingSongCard key={id} song={song} liked={false} />)
+    return this.state.trendingSongs.map((song, id) => <TrendingSongCard key={id} song={song} />)
   }
 
   render() {

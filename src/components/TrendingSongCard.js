@@ -50,8 +50,8 @@ class TrendingSongCard extends React.Component {
           </div>
           <div className="card-action">
             <a href="#">LIKE THIS SONG</a>
-            {this.state.liked ? <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon"  /></span> :
-            <span onClick={e => this.likeSong(e)}><FontAwesomeIcon id={this.props.song.id} icon={farFaHeart}size="lg" className="heart-icon white-text"  /></span>}
+            {this.state.liked ? <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon white-text right"  /></span> :
+            <span onClick={e => this.likeSong(e)}><FontAwesomeIcon id={this.props.song.id} icon={farFaHeart}size="lg" className="heart-icon white-text right"  /></span>}
           </div>
         </div>
       </div>
