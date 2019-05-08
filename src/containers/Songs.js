@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
+import ListSongs from '../components/Songs/ListSong'
 
 class Songs extends React.Component {
   constructor(props) {
@@ -26,8 +27,7 @@ class Songs extends React.Component {
   render() {
     return (
       <div className="container">
-        <h4>Showing results for "{`${localStorage.getItem("songTitle")}`}" </h4>
-        <h1>Songs</h1>
+        <h4>Search results for <span className="bold"> "{`${localStorage.getItem("songTitle")}`}"</span></h4>
         <div>{this.listSongs()}</div>
       </div>
     )

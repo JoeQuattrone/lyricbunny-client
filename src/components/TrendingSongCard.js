@@ -10,14 +10,16 @@ class TrendingSongCard extends React.Component {
     super(props)
 
     this.state = {
-      liked: false
+      liked: false,
+      likes: props.song.likes
     }
   }
 
   likeSong = (e) => {
     if (this.state.liked === false) {
       this.setState({
-        liked: true
+        liked: true,
+        likes: this.state.likes + 1
       })
 
       let data = {
@@ -30,7 +32,7 @@ class TrendingSongCard extends React.Component {
            "Content-Type": "application/json",
        },
        body: JSON.stringify(data)
-      })
+     })
     }
   }
 
@@ -46,7 +48,7 @@ class TrendingSongCard extends React.Component {
             {console.log(this.props)}
             <p>{this.props.song.artist_name}</p>
             <p>{this.props.song.genre}</p>
-            <p>{this.props.song.likes} likes</p>
+            <p>{this.state.likes} likes</p>
           </div>
           <div className="card-action">
             <a href="#">LIKE THIS SONG</a>
