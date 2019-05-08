@@ -38,20 +38,35 @@ class ShowSong extends React.Component {
       })
     }
   }
+  // songFromLocation? songFromLocaton.track.track_name :
 
 findSong = () => this.props.songs.find(song => song.track.track_id === parseInt(this.props.match.params.songId))
 
-  render() {
-    let song = this.findSong()
-    let lyrics = this.props.lyrics
+chooseSong = (songFromProps, songFromLocaton) => {
+  if (songFromProps) {
+    return songFromProps
+  } else if (songFromLocaton) {
+    return songFromLocaton
+  } else {
+    return null
+  }
+}
 
+
+  render() {
+    let songFromProps = this.findSong()
+    let songFromLocation = {track: this.props.location.state.song}
+    let song = this.chooseSong(songFromProps, songFromLocation)
+    let lyrics = this.props.lyrics
+    
     return (
       <div className="container">
         <h5>Lyrics</h5>
         <div className="row">
-          <h2 className=" col s10 song-header">{song ? song.track.track_name : null }</h2>
+          <h2 className=" col s10 song-header">{song ? song.track.track_name :  null }</h2>
           <div className="col s2 heart-div">
             {this.state.liked ?  <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon"  /></span>: <span onClick={e => this.likeSong(e)}><FontAwesomeIcon icon={farFaHeart}size="lg" className="heart-icon"  /></span>}
+
           </div>
         </div>
 

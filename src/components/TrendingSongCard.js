@@ -4,6 +4,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 import { far } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom'
 
 class TrendingSongCard extends React.Component {
   constructor(props) {
@@ -23,7 +24,7 @@ class TrendingSongCard extends React.Component {
       })
 
       let data = {
-        song: this.findSong()
+        song: this.props.song
       }
       fetch('http://localhost:3001/update_likes_from_home', {
         method: "POST",
@@ -36,25 +37,32 @@ class TrendingSongCard extends React.Component {
     }
   }
 
-  findSong = () => this.props.song
 
 
   render() {
     return (
       <div className="col s12 m6 l4">
+
         <div className="card blue-grey darken -1">
-          <div className="card-content white-text">
-            <span className="card-title">{this.props.song.track_name}</span>
-            {console.log(this.props)}
-            <p>{this.props.song.artist_name}</p>
-            <p>{this.props.song.genre}</p>
-            <p>{this.state.likes} likes</p>
-          </div>
-          <div className="card-action">
-            <a href="#">LIKE THIS SONG</a>
-            {this.state.liked ? <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon white-text right"  /></span> :
-            <span onClick={e => this.likeSong(e)}><FontAwesomeIcon id={this.props.song.id} icon={farFaHeart}size="lg" className="heart-icon white-text right"  /></span>}
-          </div>
+          <Link
+            to={{
+              pathname: 'songs/'+ this.props.song.track_id,
+              state: { song: this.props.song}
+            }} >
+            <div className="card-content white-text">
+              <span className="card-title">{this.props.song.track_name}</span>
+              {console.log(this.props)}
+              <p>{this.props.song.artist_name}</p>
+              <p>{this.props.song.genre}</p>
+              <p>{this.state.likes} likes</p>
+            </div>
+
+            <div className="card-action">
+              <a href="#">LIKE THIS SONG</a>
+              {this.state.liked ? <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon white-text right"  /></span> :
+              <span onClick={e => this.likeSong(e)}><FontAwesomeIcon id={this.props.song.id} icon={farFaHeart}size="lg" className="heart-icon white-text right"  /></span>}
+            </div>
+          </Link>
         </div>
       </div>
     )
