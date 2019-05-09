@@ -45,6 +45,12 @@ a {
   color: #fb8c00;
 }
 
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 /*
 
 
@@ -155,18 +161,32 @@ ShowSong
   float: right
 }
 
+.lyrics-title {
+  margin-top: 30px;
+}
+
 .row .col.heart-div {
-  height: 100px;
+  height: 60px;
   padding: 0px;
-  padding-top: 80px;
+  padding-top: 6px;
+  font-size: 30px;
+}
+
+#show-row {
+  margin-bottom: 0px;
+}
+
+#show-row > h2.song-header {
+  margin-top: 0px;
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
+#show-artist-name {
+  margin-top: 9px;
 }
 
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
 
 /*
 

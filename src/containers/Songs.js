@@ -1,12 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'
 import ListSong from '../components/Songs/ListSong'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
-import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 
 class Songs extends React.Component {

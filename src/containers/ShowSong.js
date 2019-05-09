@@ -2,8 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchLyrics } from '../actions/songActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
@@ -61,15 +59,15 @@ chooseSong = (songFromProps, songFromLocaton) => {
 
     return (
       <div className="container">
-        <h5>Lyrics</h5>
-        <div className="row">
+        <h5 className="lyrics-title">Lyrics</h5>
+        <div id="show-row" className="row">
           <h2 className=" col s10 song-header">{song ? song.track.track_name :  null }</h2>
           <div className="col s2 heart-div">
             {this.state.liked ?  <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon"  /></span>: <span onClick={e => this.likeSong(e)}><FontAwesomeIcon icon={farFaHeart}size="lg" className="heart-icon"  /></span>}
           </div>
         </div>
 
-        <h4>{song ? song.track.artist_name : null }</h4>
+        <h4 id="show-artist-name">{song ? song.track.artist_name : null }</h4>
         <hr/>
         <div className="InnerContainer">
           <p>{lyrics ? lyrics.lyrics_body : null}</p>
