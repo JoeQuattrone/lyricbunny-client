@@ -48,7 +48,6 @@ class TrendingSongCard extends React.Component {
             }} >
             <div className="card-content white-text">
               <span className="card-title">{this.props.song.track_name}</span>
-              {console.log(this.props)}
               <p>{this.props.song.artist_name}</p>
               <p>{this.props.song.genre}</p>
               <p>{this.state.likes} likes</p>
