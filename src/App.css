@@ -41,6 +41,10 @@ hr {
   margin-top: 2px;
 }
 
+a {
+  color: #fb8c00;
+}
+
 /*
 
 
@@ -97,6 +101,15 @@ Songs
 
 
  */
+
+#tracks-title {
+  background-color: #fff;
+  margin-bottom: 0;
+  border: solid 1px #fff;
+  border-bottom: solid .5px #eee;
+  padding: 10px;
+  border-radius: 2px;
+}
 
 .song-link {
   font-size: 16px;
