@@ -58,7 +58,7 @@ chooseSong = (songFromProps, songFromLocaton) => {
     let lyrics = this.props.lyrics
 
     return (
-      <div className="container">
+      <div id="show-song-container" className="container">
         <h5 className="lyrics-title">Lyrics</h5>
         <div id="show-row" className="row">
           <h2 className=" col s10 song-header">{song ? song.track.track_name :  null }</h2>
@@ -69,7 +69,7 @@ chooseSong = (songFromProps, songFromLocaton) => {
 
         <h4 id="show-artist-name">{song ? song.track.artist_name : null }</h4>
         <hr/>
-        <div className="InnerContainer">
+        <div>
           <p>{lyrics ? lyrics.lyrics_body : null}</p>
         </div>
       </div>
