@@ -8,6 +8,7 @@ Global Styles
 
  */
 html {
+
 }
 
 
@@ -24,7 +25,20 @@ h1, h2, h3 {
 }
 
 .bold {
-  font-weight: 600;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.p-text {
+  font-size: 24px;
+  font-weight: 300;
+  color: #8d9aa5;
+}
+
+hr {
+  color: #eee;
+  border: solid .5px #eee;
+  margin-top: 2px;
 }
 
 /*
@@ -72,6 +86,46 @@ Home
   background: white;
 }
 
+/*
+
+
+
+
+Songs
+
+
+
+
+ */
+
+.song-link {
+  font-size: 16px;
+  display: block;
+  margin-top: 5px;
+  color: #fb8c00;
+}
+
+.artist-name {
+  margin: 0px;
+  color: #8d9aa5;
+}
+
+.song-row {
+  background-color: #fff;
+  border: solid 1px #fff;
+  border-radius: 2px;
+}
+
+.search-results-container {
+  box-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+
+.icon-box {
+  margin-top: 10px;
+  height: 30px;
+  width: 35px;
+  float: left;
+}
 
 
 

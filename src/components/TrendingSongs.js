@@ -20,7 +20,7 @@ class TrendingSongs extends React.Component {
   render() {
     return (
       <div className="container">
-        <h2 id="trending-songs">Trending Songs</h2>
+        <h3 id="trending-songs">Trending Songs</h3>
         <div className="row white-row">{this.renderTrendingSongs()}</div>
       </div>
     )
