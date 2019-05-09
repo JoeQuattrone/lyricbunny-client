@@ -70,7 +70,12 @@ chooseSong = (songFromProps, songFromLocaton) => {
         <h4 id="show-artist-name">{song ? song.track.artist_name : null }</h4>
         <hr/>
         <div>
+        {
+          this.props.loading?
+          <div className="center"><img src="/public/Ajax-loader.gif"/></div>
+          : 
           <p>{lyrics ? lyrics.lyrics_body : null}</p>
+        }
         </div>
       </div>
     )

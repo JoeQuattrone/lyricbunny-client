@@ -27,8 +27,14 @@ class Songs extends React.Component {
     return (
       <div className="container">
         <p className="p-text">Search results for <span className="bold"> {localStorage.getItem("songTitle")}</span></p>
+
           <h6 id="tracks-title">TRACKS</h6>
-        <div className="row search-results-container">{this.listSongs()}</div>
+          {
+            this.props.loading?
+            <div className="center"><img src="/public/Ajax-loader.gif"/></div>
+            :
+            <div className="row search-results-container">{this.listSongs()}</div>
+          }
       </div>
     )
   }
