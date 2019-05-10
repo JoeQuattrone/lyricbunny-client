@@ -4,6 +4,7 @@ import { fetchLyrics } from '../actions/songActions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import logo from '../images/Ajax-loader.gif'
 
 
 class ShowSong extends React.Component {
@@ -72,8 +73,8 @@ chooseSong = (songFromProps, songFromLocaton) => {
         <div>
         {
           this.props.loading?
-          <div className="center"><img src="/public/Ajax-loader.gif"/></div>
-          : 
+          <div className="center"><img src={logo} /></div>
+          :
           <p>{lyrics ? lyrics.lyrics_body : null}</p>
         }
         </div>
