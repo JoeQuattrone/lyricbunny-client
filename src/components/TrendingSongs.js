@@ -1,5 +1,8 @@
 import React from 'react'
 import TrendingSongCard from './TrendingSongCard'
+import logo from '../images/Ajax-loader.gif'
+
+
 class TrendingSongs extends React.Component {
   state = {
     trendingSongs: []
@@ -17,11 +20,16 @@ class TrendingSongs extends React.Component {
     return this.state.trendingSongs.map((song, id) => <TrendingSongCard key={id} song={song} />)
   }
 
+
   render() {
     return (
       <div className="container">
         <h3 id="trending-songs">Trending Songs</h3>
-        <div className="row white-row">{this.renderTrendingSongs()}</div>
+        {
+          this.state.trendingSongs.length === 0 ? <div className="center"><img src={logo} /></div>
+        :
+          <div className="row white-row">{this.renderTrendingSongs()}</div>
+        }
       </div>
     )
   }
