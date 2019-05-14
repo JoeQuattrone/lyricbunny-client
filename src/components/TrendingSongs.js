@@ -24,7 +24,7 @@ class TrendingSongs extends React.Component {
   render() {
     return (
       <div className="container">
-        <h3 id="trending-songs">Most Liked Songs</h3>
+        <h4 id="trending-songs">Most liked songs</h4>
         {
           this.state.trendingSongs.length === 0 ? <div className="center"><img src={logo} /></div>
         :
