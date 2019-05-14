@@ -14,10 +14,6 @@ class Songs extends React.Component {
     }
   }
 
-  componentDidMount(prevProps) {
-
-  }
-
   listSongs = () => {
     return(
       this.props.songs.map(song => <ListSong key={song.track.track_id} song={song} link={`${this.props.match.url}/${song.track.track_id}`} />)

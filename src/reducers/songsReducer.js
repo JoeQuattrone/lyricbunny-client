@@ -18,6 +18,12 @@ export default function songsReducer(state = {
     case 'ADD_LYRICS':
     return {...state, loading: false, lyrics: action.payload}
 
+    case 'LOADING_POPULAR_SONGS':
+    return {...state, loading: true}
+
+    case 'ADD_POPULAR_SONGS':
+    return {...state, loading: false, popularSongs: action.payload}
+
     default:
     return state
   }

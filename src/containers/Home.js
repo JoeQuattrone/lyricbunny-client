@@ -3,6 +3,7 @@ import SongSearch from '../components/SongSearch'
 import { connect } from 'react-redux'
 import { fetchSongs } from '../actions/songActions'
 import TrendingSongs from '../components/TrendingSongs'
+import PopularSongs from '../components/PopularSongs'
 
 class Home extends React.Component {
   constructor(props) {
@@ -29,6 +30,7 @@ class Home extends React.Component {
           <SongSearch searchSongs={this.searchSongs}/>
           <div className="white-background">
             <TrendingSongs />
+            <PopularSongs />
           </div>
         </div>
     )
