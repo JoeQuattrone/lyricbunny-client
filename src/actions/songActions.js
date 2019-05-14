@@ -4,12 +4,14 @@ const API_KEY = "&apikey=523ebe747e1a258aaddd09f97f90cb70"
 
 export function fetchSongs(state, history) {
   const url = BASE_URL + `track.search?q_track=${state.songTitle}&page_size=10&page=1&s_track_rating=desc&apikey=523ebe747e1a258aaddd09f97f90cb70`
-
+  console.log('A')
   return (dispatch) => {
     dispatch({ type: 'LOADING_SONG' })
+    console.log('B')
     return axios.get(url)
       .then(res => res.data.message.body.track_list)
       .then(trackList => {
+        console.log('C')
           if (history) {
             dispatch({ type: 'ADD_SONG', payload: trackList })
             history.push("/songs")
@@ -18,6 +20,7 @@ export function fetchSongs(state, history) {
           }
       })
   }
+  console.log('D')
 }
 
 export function fetchLyrics(trackId) {

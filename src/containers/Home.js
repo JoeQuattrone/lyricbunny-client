@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { fetchSongs } from '../actions/songActions'
 import TrendingSongs from '../components/TrendingSongs'
 import PopularSongs from '../components/PopularSongs'
-
 class Home extends React.Component {
   constructor(props) {
     super(props)

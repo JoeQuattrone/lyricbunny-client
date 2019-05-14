@@ -11,7 +11,7 @@ class ShowSong extends React.Component {
   state = {
     liked: false,
   }
-
+// save lyrics in api via like and check my api before fetch
   componentDidMount() {
     this.props.fetchLyrics(this.props.match.params.songId)
   }
@@ -42,20 +42,12 @@ findSong = () => this.props.songs.find(song => song.track.track_id === parseInt(
 
 findSongFromLocation = () => this.props.location.state ? {track: this.props.location.state.song} : null
 
-chooseSong = (songFromProps, songFromLocaton) => {
-  if (songFromProps) {
-    return songFromProps
-  } else if (songFromLocaton) {
-    return songFromLocaton
-  } else {
-    return null
-  }
+chooseSong = () => {
+  return this.findSong() || this.findSongFromLocation()
 }
 
   render() {
-    let songFromProps = this.findSong()
-    let songFromLocation = this.findSongFromLocation()
-    let song = this.chooseSong(songFromProps, songFromLocation)
+    let song = this.chooseSong()
     let lyrics = this.props.lyrics
 
     return (

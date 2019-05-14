@@ -9,7 +9,7 @@ class PopularSongs extends React.Component {
   }
 
   renderPopularSongs = () => {
-    this.props.popularSongs ? this.props.popularSongs.map((song, id) => <PopularSongCard key={id} song={song} />) : null
+    return this.props.popularSongs ? this.props.popularSongs.map((song, id) => <PopularSongCard key={id} song={song} />) : null
   }
 
   render() {

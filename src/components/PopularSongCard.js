@@ -14,6 +14,8 @@ class PopularSongCard extends React.Component {
     }
   }
 
+
+
   likeSong = (e) => {
     if (this.state.liked === false) {
       this.setState({
@@ -47,7 +49,7 @@ class PopularSongCard extends React.Component {
               state: { song: this.props.song}
             }} >
             <div className="card-content white-text">
-              <span className="card-title">{this.props.song.track_name}</span>
+              <span className="card-title">{this.props.song.track.track_name}</span>
               <p>{this.props.song.artist_name}</p>
               <p>{this.props.song.genre}</p>
               <p>{this.state.likes} likes</p>
