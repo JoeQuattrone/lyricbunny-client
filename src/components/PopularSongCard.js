@@ -1,3 +1,5 @@
+// Delete soon
+
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'

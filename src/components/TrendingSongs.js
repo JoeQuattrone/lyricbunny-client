@@ -1,5 +1,5 @@
 import React from 'react'
-import TrendingSongCard from './TrendingSongCard'
+import SongCard from './SongCard'
 import logo from '../images/Ajax-loader.gif'
 
 
@@ -17,9 +17,8 @@ class TrendingSongs extends React.Component {
   }
 
   renderTrendingSongs = () => {
-    return this.state.trendingSongs.map((song, id) => <TrendingSongCard key={id} song={song} />)
+    return this.state.trendingSongs.map((song, id) => <SongCard key={id} song={song} />)
   }
-
 
   render() {
     return (
@@ -30,7 +29,7 @@ class TrendingSongs extends React.Component {
         :
           <div className="row white-row">{this.renderTrendingSongs()}</div>
         }
-      </>  
+      </>
     )
   }
 }

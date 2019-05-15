@@ -16,6 +16,7 @@ html {
 
 body {
   background-color: #f5f7fa;
+  margin: 0;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -61,12 +62,21 @@ Home
 
  */
 
-.white-background {
+/* .white-background {
   background-color: white;
   position: absolute;
-  top: 300px;
-  bottom: 0;
   width: 100%;
+  height: 90vh;
+  margin-top: 1.946rem;
+} */
+
+.white-background {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  background: white;
+  margin-top: 1.946rem;
+  flex: 1 1 auto;
 }
 
 #home-searchbar {
@@ -75,7 +85,7 @@ Home
   width: 80%;
   z-index: 1;
   box-shadow: 2px 2px 5px #888;
-  padding: 0 12px;
+  padding-left: 12px;
 }
 
 #home-search-btn {
@@ -224,6 +234,16 @@ Media Queries
    }
 
    .white-background {
-     top: 400px;
+     /* height: 120vh; */
+   }
+ }
+
+ @media screen and (min-height: 700px) {
+   .white-background {
+     background-color: white;
+     position: absolute;
+     width: 100%;
+     height: 80vh;
+     margin-top: 1.946rem;
    }
  }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { fetchPopularSongs } from '../actions/songActions'
-import PopularSongCard from './PopularSongCard'
+import SongCard from './SongCard'
 
 class PopularSongs extends React.Component {
   componentDidMount() {
@@ -9,7 +9,7 @@ class PopularSongs extends React.Component {
   }
 
   renderPopularSongs = () => {
-    return this.props.popularSongs ? this.props.popularSongs.map((song, id) => <PopularSongCard key={id} song={song} />) : null
+    return this.props.popularSongs ? this.props.popularSongs.map((song, id) => <SongCard key={id} song={song} />) : null
   }
 
   render() {
@@ -18,7 +18,7 @@ class PopularSongs extends React.Component {
         <h4 className="home-heading">Chart Topping Songs</h4>
         <div className="row white-row">{this.renderPopularSongs()}
         </div>
-      </>  
+      </>
     )
   }
 }

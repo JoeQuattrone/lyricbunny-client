@@ -1,13 +1,10 @@
-// Delete soon
-
-
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart as farFaHeart } from '@fortawesome/free-regular-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
-class TrendingSongCard extends React.Component {
+class SongCard extends React.Component {
   constructor(props) {
     super(props)
 
@@ -38,30 +35,33 @@ class TrendingSongCard extends React.Component {
     }
   }
 
+
   render() {
+    const song = this.props.song.track ? this.props.song.track : this.props.song
+
     return (
       <div className="col s12 m6 l4">
         <div className="card blue-grey darken -1">
           <Link
             to={{
-              pathname: 'songs/'+ this.props.song.track_id,
-              state: { song: this.props.song}
+              pathname: 'songs/'+ song.track_id,
+              state: { song: song}
             }} >
             <div className="card-content white-text">
-              <span className="card-title">{this.props.song.track_name}</span>
-              <p>{this.props.song.artist_name}</p>
-              <p>{this.props.song.genre}</p>
+              <span className="card-title">{song.track_name}</span>
+              <p>{song.artist_name}</p>
+              <p>{song.genre}</p>
               <p>{this.state.likes} likes</p>
             </div>
           </Link>
           <div className="card-action">
             <Link
               to={{
-                pathname: 'songs/'+ this.props.song.track_id,
-                state: { song: this.props.song}
+                pathname: 'songs/'+ song.track_id,
+                state: { song: song}
               }} >LIKE THIS SONG</Link>
             {this.state.liked ? <span><FontAwesomeIcon icon={faHeart}size="lg" className="heart-icon white-text right"  /></span> :
-            <span onClick={e => this.likeSong(e)}><FontAwesomeIcon id={this.props.song.id} icon={farFaHeart}size="lg" className="heart-icon white-text right"  /></span>}
+            <span onClick={e => this.likeSong(e)}><FontAwesomeIcon id={song.id} icon={farFaHeart}size="lg" className="heart-icon white-text right"  /></span>}
           </div>
         </div>
       </div>
@@ -69,4 +69,4 @@ class TrendingSongCard extends React.Component {
   }
 }
 
-export default TrendingSongCard
+export default SongCard
