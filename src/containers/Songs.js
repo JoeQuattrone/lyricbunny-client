@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import ListSong from '../components/Songs/ListSong'
 import logo from '../images/Ajax-loader.gif'
 
-
 class Songs extends React.Component {
   constructor(props) {
     super(props)

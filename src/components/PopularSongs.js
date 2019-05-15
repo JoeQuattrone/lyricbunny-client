@@ -14,7 +14,11 @@ class PopularSongs extends React.Component {
 
   render() {
     return (
-      <div className="row white-row">{this.renderPopularSongs()}</div>
+      <>
+        <h4 className="home-heading">Chart Topping Songs</h4>
+        <div className="row white-row">{this.renderPopularSongs()}
+        </div>
+      </>  
     )
   }
 }

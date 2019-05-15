@@ -23,14 +23,14 @@ class TrendingSongs extends React.Component {
 
   render() {
     return (
-      <div className="container">
-        <h4 id="trending-songs">Most liked songs</h4>
+      <>
+        <h4 className="home-heading">Most liked songs</h4>
         {
           this.state.trendingSongs.length === 0 ? <div className="center"><img src={logo} /></div>
         :
           <div className="row white-row">{this.renderTrendingSongs()}</div>
         }
-      </div>
+      </>  
     )
   }
 }

@@ -36,7 +36,6 @@ class ShowSong extends React.Component {
       })
     }
   }
-  // songFromLocation? songFromLocaton.track.track_name :
 
 findSong = () => this.props.songs.find(song => song.track.track_id === parseInt(this.props.match.params.songId))
 
@@ -49,7 +48,6 @@ chooseSong = () => {
   render() {
     let song = this.chooseSong()
     let lyrics = this.props.lyrics
-
     return (
       <div id="show-song-container" className="container">
         <h5 className="lyrics-title">Lyrics</h5>

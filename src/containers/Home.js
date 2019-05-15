@@ -28,8 +28,10 @@ class Home extends React.Component {
         <div className="Home">
           <SongSearch searchSongs={this.searchSongs}/>
           <div className="white-background">
-            <TrendingSongs />
-            <PopularSongs />
+            <div className="container">
+              <TrendingSongs />
+              <PopularSongs />
+            </div>
           </div>
         </div>
     )

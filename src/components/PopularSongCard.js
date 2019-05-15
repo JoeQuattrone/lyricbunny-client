@@ -14,8 +14,6 @@ class PopularSongCard extends React.Component {
     }
   }
 
-
-
   likeSong = (e) => {
     if (this.state.liked === false) {
       this.setState({
@@ -36,8 +34,6 @@ class PopularSongCard extends React.Component {
      })
     }
   }
-
-
 
   render() {
     return (
