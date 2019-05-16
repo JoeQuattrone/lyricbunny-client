@@ -8,15 +8,21 @@ class PopularSongs extends React.Component {
     this.props.fetchPopularSongs()
   }
 
-  renderPopularSongs = () => {
-    return this.props.popularSongs ? this.props.popularSongs.map((song, id) => <SongCard key={id} song={song} />) : null
+  renderPopularSongs1 = () => {
+    return this.props.popularSongs ? this.props.popularSongs.slice(0, 3).map((song, id) => <SongCard key={id} song={song} />) : null
+  }
+
+  renderPopularSongs2 = () => {
+    return this.props.popularSongs ? this.props.popularSongs.slice(3).map((song, id) => <SongCard key={id} song={song} />) : null
   }
 
   render() {
     return (
       <>
         <h4 className="home-heading">Chart Topping Songs</h4>
-        <div className="row white-row">{this.renderPopularSongs()}
+        <div className="row white-row">{this.renderPopularSongs1()}
+        </div>
+        <div className="row white-row">{this.renderPopularSongs2()}
         </div>
       </>
     )
