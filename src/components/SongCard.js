@@ -41,7 +41,7 @@ class SongCard extends React.Component {
 
     return (
       <div className="col s12 m6 l4">
-        <div className="card blue-grey darken -1">
+        <div className="card">
           <Link
             to={{
               pathname: 'songs/'+ song.track_id,
