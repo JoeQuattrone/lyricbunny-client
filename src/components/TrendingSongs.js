@@ -9,7 +9,7 @@ class TrendingSongs extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3001/trending_songs')
+    fetch('https://lyricbunny-api.herokuapp.com/trending_songs')
       .then(res => res.json())
       .then(json => this.setState({
         trendingSongs: json

@@ -28,7 +28,7 @@ class ShowSong extends React.Component {
       let data = {
         song: this.chooseSong(this.findSong(), this.findSongFromLocation())
       }
-      fetch('http://localhost:3001/update_likes', {
+      fetch('https://lyricbunny-api.herokuapp.com/update_likes', {
         method: "POST",
         mode: 'cors',
         headers: {

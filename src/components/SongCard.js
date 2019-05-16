@@ -24,7 +24,7 @@ class SongCard extends React.Component {
       let data = {
         song: this.props.song
       }
-      fetch('http://localhost:3001/update_likes_from_home', {
+      fetch('https://lyricbunny-api.herokuapp.com/update_likes_from_home', {
         method: "POST",
         mode: 'cors',
         headers: {

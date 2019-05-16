@@ -30,7 +30,7 @@ export function fetchLyrics(trackId) {
 }
 
 export function fetchPopularSongs() {
-  const url = 'http://localhost:3001/popular_songs'
+  const url = 'https://lyricbunny-api.herokuapp.com/popular_songs'
 
   return (dispatch) => {
     dispatch({ type: 'LOADING_POPULAR_SONGS' })
@@ -41,6 +41,6 @@ export function fetchPopularSongs() {
 }
 
 //
-// const url = 'http://localhost:3001/popular_songs'
+// const url = 'https://lyricbunny-api.herokuapp.com/popular_songs'
 
 // https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/track.lyrics.get?track_id=13873035&apikey=523ebe747e1a258aaddd09f97f90cb70`
