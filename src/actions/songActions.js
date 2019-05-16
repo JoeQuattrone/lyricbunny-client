@@ -30,12 +30,13 @@ export function fetchLyrics(trackId) {
 }
 
 export function fetchPopularSongs() {
-  const url = BASE_URL + `chart.tracks.get?chart_name=top&page=1&page_size=6&country=it&f_has_lyrics=1` + API_KEY
+  const url = 'http://localhost:3001/popular_songs'
+
   return (dispatch) => {
     dispatch({ type: 'LOADING_POPULAR_SONGS' })
     return fetch(url)
       .then(res => res.json())
-      .then(json => dispatch({ type: 'ADD_POPULAR_SONGS', payload: json.message.body.track_list }))
+      .then(json => dispatch({ type: 'ADD_POPULAR_SONGS', payload: json }))
   }
 }
 
