@@ -75,7 +75,7 @@ Home
   flex-flow: column;
   height: 100%;
   background: white;
-  margin-top: 2.46rem;
+  margin-top: 2.86rem;
   flex: 1 1 auto;
 }
 
@@ -238,12 +238,20 @@ Media Queries
    }
  }
 
- @media screen and (min-height: 700px) {
+ /* @media screen and (min-height: 700px & max-height: 815px;) {
    body {
    }
    .white-background {
-     background-color: white;
      position: absolute;
      width: 100%;
+     height: 180vh;
+
    }
- }
+ } */
+
+  @media screen and (min-height: 700px) {
+    .white-background {
+      position: absolute;
+      width: 100%;
+    }
+  }
