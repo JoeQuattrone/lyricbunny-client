@@ -83,20 +83,22 @@ Home
   background: #fff;
   width: 80%;
   z-index: 1;
-  box-shadow: 2px 2px 5px #888;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
   padding-left: 12px;
 }
 
 #home-search-btn {
   height: 100%;
-  padding: 14px;
+  padding: 15px 14px 13px;
+  margin-bottom: 8px;
   color: white;
   background: #fb8c00;
   border: solid 1px #fb8c00;
   border-radius: 2px;
   z-index: 1;
-  box-shadow: 2px 2px 5px #888;
-
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.4);
+/* 2px 2px 5px #888 */
+/* 0 2px 2px 0 rgba(0,0,0,0.14) */
 }
 
 #home-title {
