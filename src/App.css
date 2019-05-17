@@ -107,11 +107,11 @@ Home
   background: #59748F;
   position: relative;
   top: 0;
-  transition: top ease .5s;
+  transition: top ease .2s;
 }
 
 .card:hover {
-  top: -5px;
+  top: -3px;
 }
 
 /*
