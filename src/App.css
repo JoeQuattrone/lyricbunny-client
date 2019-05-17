@@ -105,6 +105,13 @@ Home
 
 .card {
   background: #59748F;
+  position: relative;
+  top: 0;
+  transition: top ease .5s;
+}
+
+.card:hover {
+  top: -5px;
 }
 
 /*
