@@ -38,7 +38,6 @@ class SongCard extends React.Component {
 
   render() {
     const song = this.props.song.track ? this.props.song.track : this.props.song
-
     return (
       <div className="col s12 m6 l4">
         <div className="card">
